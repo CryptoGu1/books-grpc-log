@@ -84,18 +84,18 @@ type LogRequest_Entities int32
 
 const (
 	LogRequest_USER LogRequest_Entities = 0
-	LogRequest_BOOk LogRequest_Entities = 1
+	LogRequest_BOOK LogRequest_Entities = 1
 )
 
 // Enum value maps for LogRequest_Entities.
 var (
 	LogRequest_Entities_name = map[int32]string{
 		0: "USER",
-		1: "BOOk",
+		1: "BOOK",
 	}
 	LogRequest_Entities_value = map[string]int32{
 		"USER": 0,
-		"BOOk": 1,
+		"BOOK": 1,
 	}
 )
 
@@ -253,7 +253,7 @@ const file_log_proto_rawDesc = "" +
 	"\x06DELETE\x10\x05\"\x1e\n" +
 	"\bEntities\x12\b\n" +
 	"\x04USER\x10\x00\x12\b\n" +
-	"\x04BOOk\x10\x01\"\a\n" +
+	"\x04BOOK\x10\x01\"\a\n" +
 	"\x05Empty24\n" +
 	"\fAuditService\x12$\n" +
 	"\x03Log\x12\x0f.log.LogRequest\x1a\n" +
