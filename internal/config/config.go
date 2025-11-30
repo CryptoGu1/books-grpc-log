@@ -21,7 +21,7 @@ type Server struct {
 func New() (*Config, error) {
 	cfg := &Config{}
 
-	if err := envconfig.Process("db", &cfg.Server); err != nil {
+	if err := envconfig.Process("db", &cfg.DB); err != nil {
 		return nil, err
 	}
 
