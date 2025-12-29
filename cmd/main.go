@@ -26,9 +26,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("--- DEBUG CONFIG ---")
-	fmt.Printf("URI: '%s'\n", cfg.DB.URI)
-	fmt.Printf("User: '%s'\n", cfg.DB.Username)
 	fmt.Println("--------------------")
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)

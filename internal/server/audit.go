@@ -2,6 +2,7 @@ package server
 
 import (
 	"context"
+	"fmt"
 
 	audit "github.com/CryptoGu1/books-grpc-log/pkg/domain"
 )
@@ -23,6 +24,10 @@ func NewAuditServer(service AuditService) *AuditServer {
 
 func (s *AuditServer) Log(ctx context.Context, req *audit.LogRequest) (*audit.Empty, error) {
 	err := s.service.Insert(ctx, req)
+	if err != nil {
+		return nil, err
+	}
+	fmt.Println(req)
 
 	return &audit.Empty{}, err
 }

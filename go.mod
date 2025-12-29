@@ -1,8 +1,9 @@
 module github.com/CryptoGu1/books-grpc-log
 
-go 1.25.0
+go 1.24.0
 
 require (
+	github.com/joho/godotenv v1.5.1
 	github.com/kelseyhightower/envconfig v1.4.0
 	go.mongodb.org/mongo-driver v1.17.6
 	google.golang.org/grpc v1.77.0
@@ -11,7 +12,6 @@ require (
 
 require (
 	github.com/golang/snappy v0.0.4 // indirect
-	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/klauspost/compress v1.16.7 // indirect
 	github.com/montanaflynn/stats v0.7.1 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect

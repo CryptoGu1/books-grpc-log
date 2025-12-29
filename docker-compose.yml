@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  logger:
+    build: .
+    container_name: global_logger  # <--- ЗАПОМНИ ЭТО ИМЯ. По нему будем стучаться.
+    ports:
+      - "9000:9000"
+    environment:
+      - SERVER_PORT=9000
+      - DB_URI=mongodb://admin:g0langninja@mongo:27017/audit?authSource=admin
+    depends_on:
+      - mongo
+    networks:
+      - microservices-net # Подключаемся к общей сети
+    restart: always
+
+  mongo:
+    image: mongo:5
+    container_name: logger_mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=g0langninja
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - microservices-net # И база тоже в общей сети
+
+# Самое важное: объявляем, что сеть ВНЕШНЯЯ (создана заранее)
+networks:
+  microservices-net:
+    external: true
+
+volumes:
+  mongo_data:
